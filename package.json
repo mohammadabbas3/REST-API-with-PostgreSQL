@@ -1,9 +1,14 @@
 {
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "lowdb": "^3.0.0",
+    "morgan": "^1.10.0",
+    "nanoid": "^3.3.4",
     "nodemon": "^2.0.16",
-    "pg": "^8.7.3"
+    "pg": "^8.7.3",
+    "swagger-ui-express": "^4.4.0"
   },
   "name": "postgresql",
   "version": "1.0.0",

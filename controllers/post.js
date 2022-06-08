@@ -4,10 +4,10 @@ const createUser = async (req, res) => {
     try {
         const { body } = req
 
+        const name = body?.name
         const id = body?.id
-        const age = body?.age
 
-        let createQuery = `INSERT INTO users (id , age) VALUES (${id}, ${age})`
+        let createQuery = `INSERT INTO admin (name , id) VALUES ('${name}', ${id})`
 
         postgreSQL.query(createQuery).then((result) => {
             // console.log(result)
@@ -17,7 +17,7 @@ const createUser = async (req, res) => {
                 message: 'User created successfully'
             })
         }).catch((err) => {
-            // console.log("err", err)
+            console.log("err", err)
             return res.send({
                 success: false,
                 status: 500,
@@ -26,7 +26,7 @@ const createUser = async (req, res) => {
         })
 
     } catch (error) {
-        // console.log("error", error)
+        console.log("error", error)
         return res.send({
             success: false,
             status: 500,

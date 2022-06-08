@@ -2,7 +2,7 @@ const postgreSQL = require('../config/db')
 
 const getAllUser = async (req, res) => {
     try {
-        let getAllUserQuery = `SELECT * FROM users`
+        let getAllUserQuery = `SELECT * FROM admin`
         postgreSQL.query(getAllUserQuery).then((result) => {
             // console.log(result)
             return res.send({
@@ -11,7 +11,7 @@ const getAllUser = async (req, res) => {
                 data: result.rows
             })
         }).catch((err) => {
-            // console.log("err", err)
+            console.log("err", err)
             return res.send({
                 success: false,
                 status: 500,
@@ -32,7 +32,7 @@ const getUserById = async (req, res) => {
         const { params } = req
         const id = params?.id
 
-        let getUserByIdQuery = `SELECT * FROM users WHERE id = ${id}`
+        let getUserByIdQuery = `SELECT * FROM admin WHERE id = ${id}`
 
         postgreSQL.query(getUserByIdQuery).then((result) => {
             // console.log(result)
