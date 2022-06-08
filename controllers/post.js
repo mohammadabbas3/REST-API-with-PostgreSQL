@@ -7,7 +7,9 @@ const createUser = async (req, res) => {
         const id = body?.id
         const age = body?.age
 
-        postgreSQL.query(`INSERT INTO users (id , age) VALUES (${id}, ${age})`).then((result) => {
+        let createQuery = `INSERT INTO users (id , age) VALUES (${id}, ${age})`
+
+        postgreSQL.query(createQuery).then((result) => {
             // console.log(result)
             return res.send({
                 success: true,

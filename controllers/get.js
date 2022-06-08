@@ -2,7 +2,8 @@ const postgreSQL = require('../config/db')
 
 const getAllUser = async (req, res) => {
     try {
-        postgreSQL.query(`SELECT * FROM users`).then((result) => {
+        let getAllUserQuery = `SELECT * FROM users`
+        postgreSQL.query(getAllUserQuery).then((result) => {
             // console.log(result)
             return res.send({
                 success: true,
@@ -30,7 +31,10 @@ const getUserById = async (req, res) => {
     try {
         const { params } = req
         const id = params?.id
-        postgreSQL.query(`SELECT * FROM users WHERE id = ${id}`).then((result) => {
+
+        let getUserByIdQuery = `SELECT * FROM users WHERE id = ${id}`
+
+        postgreSQL.query(getUserByIdQuery).then((result) => {
             // console.log(result)
             return res.send({
                 success: true,
