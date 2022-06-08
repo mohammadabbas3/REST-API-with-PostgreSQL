@@ -3,7 +3,7 @@ const servers = require('./servers');
 const components = require('./components');
 const tags = require('./tags');
 // const accounts = require('./accounts');
-const accounts = require('./admin');
+// const accounts = require('./admin');
 
 module.exports = {
     ...basicInfo,

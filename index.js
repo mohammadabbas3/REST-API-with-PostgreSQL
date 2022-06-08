@@ -20,7 +20,8 @@ app.use(bodyParser.urlencoded({ extended: true, }))
 
 app.use(morgan("dev"));
 app.use(cors());
-app.use('/accounts',accountsRouter);
+// app.use('/accounts',accountsRouter);
+// app.use('/api',accountsRouter);
 app.use('/api',swaggerUI.serve,swaggerUI.setup(docs));
 
 
@@ -61,7 +62,7 @@ postgreSQL.connect().then(() => {
 // })
 
 
-app.use('/api', require('./routes'))
+app.use('/apis', require('./routes'))
 
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}.`)

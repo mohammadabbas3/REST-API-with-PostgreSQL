@@ -14,7 +14,7 @@ module.exports = {
         //     ...getAccount,
         //     ...deleteAccount
         // }
-        '/get': {
+        '/apis/get/get-user': {
                 ...getSample
             }
     }

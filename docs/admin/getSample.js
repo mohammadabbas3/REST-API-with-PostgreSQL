@@ -1,26 +1,35 @@
 module.exports = {
     get: {
-        tags: ['Accounts operationsss'],
-        description: "Get an Account",
+        tags: ['Accounts operations'],
+        description: "Enter your name and id",
         operationId: "getAccount",
-        parameters: [
-            {
-                name: "id",
-                in: "path",
-                schema: {
-                    $ref: "#/components/schemas/userID"
-                },
-                required: true,
-                description: "A single User's Account"
-            }
-        ],
+        // parameters: [
+        //     {
+        //         name: "name",
+        //         in: "path",
+        //         schema: {
+        //             $ref: "#/components/schemas/name"
+        //         },
+        //         required: true,
+        //         description: "Enter name"
+        //     },
+        //     {
+        //         name: "id",
+        //         in: "path",
+        //         schema: {
+        //             $ref: "#/components/schemas/id"
+        //         },
+        //         required: true,
+        //         description: "Enter id"
+        //     }
+        // ],
         responses: {
             '200': {
-                description: "Account is obtained",
+                description: "names are here",
                 content: {
                     'application/json': {
                         schema: {
-                            $ref: "#/components/schemas/Todo"
+                            $ref: "#/components/schemas"
                         }
                     }
                 }
